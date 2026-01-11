@@ -1,0 +1,84 @@
+{
+  "name": "n8n-nodes-vanta",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Vanta compliance automation platform providing 12 resources and 50+ operations for security compliance monitoring, test management, vulnerability tracking, and vendor risk management.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-vanta.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-vanta",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-vanta/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "vanta",
+    "compliance",
+    "soc2",
+    "iso27001",
+    "hipaa",
+    "gdpr",
+    "security",
+    "automation",
+    "grc",
+    "vendor-risk",
+    "vulnerability-management"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/VantaOAuth2Api.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Vanta/Vanta.node.js",
+      "dist/nodes/Vanta/VantaTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.48.0",
+    "prettier": "^3.3.0",
+    "rimraf": "^5.0.7",
+    "ts-jest": "^29.1.4",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
