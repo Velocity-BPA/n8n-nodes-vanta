@@ -21,6 +21,6 @@ jobs:
       - name: Build
         run: node_modules/.bin/tsc --noEmitOnError false --skipLibCheck true && node_modules/.bin/gulp build:icons || node_modules/.bin/tsc --noEmitOnError false --skipLibCheck true
       - name: Publish
-        run: npm publish --access public
+        run: npm publish --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
